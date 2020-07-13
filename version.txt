@@ -1,1 +1,3 @@
-COMMITDATE
+File containing information on when the current commit was originated
+
+
