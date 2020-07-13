@@ -2,10 +2,6 @@ execute_process(COMMAND git log --pretty=format:'%h' -n 1
                 OUTPUT_VARIABLE GIT_REV
                 ERROR_QUIET)
 
-if (MSVC)
-    execute_process(COMMAND "lxrun /install /y")
-endif()
-
 # Check whether we got any revision (which isn't
 # always the case, e.g. when someone downloaded a zip
 # file from Github instead of a checkout)
@@ -23,7 +19,6 @@ else()
 
     string(STRIP "${GIT_REV}" GIT_REV)
     string(SUBSTRING "${GIT_REV}" 1 7 GIT_REV)
-    string(STRIP "${GIT_DIFF}" GIT_DIFF)
     string(STRIP "${GIT_TAG}" GIT_TAG)
     string(STRIP "${GIT_BRANCH}" GIT_BRANCH)
 endif()
