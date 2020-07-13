@@ -1,5 +1,5 @@
 // Retrieve all the information about the github repo we have generated
-gitinfo:{@[(!).("S*";"=")0:hsym`$;"version.txt";{"Generate version.txt using 'cmake -P gitversion.cmake' from repo root"}]}
+gitinfo:{@[(!).("S*";"=")0:hsym`$;"version.txt";{"Generate version.txt using 'cmake -P gitversion.cmake' from the github repo root"}]}
 
 // Retrieve any potentially useful information about the kdb version/system information
 qinfo:`qversion`qrelease`os!(.z.K;.z.k;.z.o)
