@@ -1,3 +1,0 @@
-File containing information on when the current commit was originated
-2020-07-13
-10-56-59
