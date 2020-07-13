@@ -11,13 +11,9 @@ endif()
 # file from Github instead of a checkout)
 if ("${GIT_REV}" STREQUAL "")
     set(GIT_REV "N/A")
-    set(GIT_DIFF "")
     set(GIT_TAG "N/A")
     set(GIT_BRANCH "N/A")
 else()
-    execute_process(
-        COMMAND bash -c "git diff --quiet --exit-code || echo +"
-        OUTPUT_VARIABLE GIT_DIFF)
     execute_process(
         COMMAND git describe --exact-match --tags
         OUTPUT_VARIABLE GIT_TAG ERROR_QUIET)
@@ -36,7 +32,7 @@ string(TIMESTAMP DATE "%Y-%m-%d")
 string(TIMESTAMP TIME "%H:%M:%S")
 
 
-set(VERSION "GIT_REV=${GIT_REV}${GIT_DIFF}
+set(VERSION "GIT_REV=${GIT_REV}
 GIT_TAG=${GIT_TAG}
 GIT_BRANCH=${GIT_BRANCH}
 DATE=${DATE}
